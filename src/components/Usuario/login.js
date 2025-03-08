@@ -78,6 +78,7 @@ function Login() {
                 name="usuario"
                 className="form-control"
                 placeholder="Ingresa tu usuario"
+                onInput={(e) => e.target.value = e.target.value.toUpperCase()}  
               />
             </div>
 

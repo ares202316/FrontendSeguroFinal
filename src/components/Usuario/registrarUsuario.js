@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { NavLink } from "react-router-dom";
 import { registrarUsuario } from "../../actions/UsuarioAction";
 
 function CrearUsuario() {
@@ -136,9 +136,9 @@ function CrearUsuario() {
           </form>
 
           <div className="mt-3 text-start">
-            <a href="/menuUsuario" className="btn btn-secondary">
-              Volver
-            </a>
+              <NavLink to="/menuUsuario" className="btn btn-link">
+                Volver
+              </NavLink>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { registrar, ObtenerIDporNombre } from "../../actions/CoberturaAction";
+import { NavLink } from "react-router-dom";
 
 function CrearCobertura() {
   const { nombre } = useParams();
@@ -17,7 +18,7 @@ function CrearCobertura() {
   
     ObtenerIDporNombre(nombre).then((respuesta) => {
       console.log("Respuesta completa:", respuesta);
-      const id = respuesta.ramoId; // extraemos solo el número
+      const id = respuesta.ramoId; 
       console.log("ID del ramo:", id);
   
       setCobertura((anterior) => ({
@@ -54,14 +55,14 @@ function CrearCobertura() {
         });
        })
        .catch(error => {
-         console.error('Hubo un problema al registrar el usuario:', error);
+         console.error('Hubo un problema al registrar el usuario: ', error);
    
         
          if (error.response && error.response.data && error.response.data.ErrorMessages) {
           
            alert(error.response.data.ErrorMessages.join(", "));
          } else {
-           alert("Hubo un error en el registro.");
+           alert("No dejar nombres vacios y tampaco repetidos.");
          }
        });
    };
@@ -82,7 +83,7 @@ function CrearCobertura() {
         if (error.response && error.response.data && error.response.data.ErrorMessages) {
           alert(error.response.data.ErrorMessages.join(", "));
         } else {
-          alert("Hubo un error en el registro.");
+          alert("");
         }
       });
   };
@@ -127,7 +128,7 @@ function CrearCobertura() {
         </div>
 
         <div className="form-group mb-3 text-start">
-            <label htmlFor="deducible">Deducible</label>
+            <label htmlFor="deducible">Deducible %</label>
             <input
               input="number"
               id="deducible"
@@ -154,10 +155,10 @@ function CrearCobertura() {
       </form>
 
       <div className="mt-3 text-start">
-        <a href="/menuRamo" className="btn btn-link">
-          Volver
-        </a>
-      </div>
+              <NavLink to="/menuCobertura" className="btn btn-link">
+                Volver
+              </NavLink>
+       </div>
     </div>
   </div>
 </div>

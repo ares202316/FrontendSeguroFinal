@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ObtenerRamoPorId, ActualizaRamo } from "../../actions/RamoAction";
+import { NavLink } from "react-router-dom";
 
 function ActualizarRamo() {
   const { id } = useParams();
@@ -95,10 +96,10 @@ function ActualizarRamo() {
           </form>
 
           <div className="mt-3 text-start">
-            <a href="/menuRamo" className="btn btn-link">
-              Volver
-            </a>
-          </div>
+              <NavLink to="/menuRamo" className="btn btn-link">
+                Volver
+              </NavLink>
+           </div>
         </div>
       </div>
     </div>

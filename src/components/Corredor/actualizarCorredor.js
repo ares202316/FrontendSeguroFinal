@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { registrar } from "../../actions/CorredorAction";
+import React, { useState, useEffect } from "react";
+import { NavLink,useParams, useNavigate } from "react-router-dom";
+import { Actualizar, ObtenerId} from "../../actions/CorredorAction";
 
-function CrearCorredor() {
+function ActualizarCorredor() {
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+  
   const [Corredor, setCorredor] = useState({
      
     "nombre": "",
@@ -14,6 +18,20 @@ function CrearCorredor() {
     
     
   })
+
+
+   useEffect(() => {
+    ObtenerId(id)
+        .then((response) => {
+          setCorredor(response);  
+        })
+        .catch((error) => {
+          console.error("Error al obtener ramo:", error);
+          navigate("/error");
+        });
+
+        
+    }, [id, navigate]);
 
   const ingresarValores = e => {
     const { name, value } = e.target;
@@ -28,18 +46,11 @@ function CrearCorredor() {
   
     console.log('Imprimir los valores de los registro', Corredor);
   
-    registrar(Corredor)
+    Actualizar(Corredor)
       .then(response => {
         console.log('Se registró exitosamente el registro', response);
         alert("Se registró exitosamente el registro");
-        setCorredor({
-          nombre: "",
-          apellido: "",
-          dni: "",
-          email: "",
-          codCorredor: ""
-
-        });
+        navigate("/menuCorredor")
       })
       .catch(error => {
         console.error('Hubo un problema al registrar el registro:', error);
@@ -159,4 +170,4 @@ function CrearCorredor() {
   );
 }
 
-export default CrearCorredor;
+export default ActualizarCorredor;

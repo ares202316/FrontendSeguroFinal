@@ -23,9 +23,9 @@ export const ObtenerCliente = () => {
 
   const API_URL = "https://localhost:7103/api/Ramos";
 
-  export async function ObtenerRamoPorId(id) {
+  export async function ObtenerClientePorId(id) {
     try {
-      const response = await axios.get(`${API_URL}/${id}`);
+      const response = await axios.get(`https://localhost:7103/api/Clientes/${id}`);
       return response.data;
     } catch (error) {
       console.error("Error al obtener el ramo:", error);
@@ -33,12 +33,12 @@ export const ObtenerCliente = () => {
     }
   }
   
-  export async function ActualizaRamo(ramo) {
+  export async function ActualizaCliente(cliente) {
     try {
-      const response = await axios.patch(`${API_URL}/${ramo.id}`, ramo);
+      const response = await axios.patch(`https://localhost:7103/api/Clientes/{ramo.id}`, cliente);
       return response.data;
     } catch (error) {
-      console.error("Error al actualizar el ramo:", error);
+      console.error("Error al actualizar el ramo:", cliente);
       throw error;
     }
   }

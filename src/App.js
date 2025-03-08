@@ -22,11 +22,15 @@ import ActualizarCoberturas from './components/Cobertura/actualizarCoberturas.js
 
 import MenuPoliza from './components/Poliza/menuPoliza.js';
 import RegistroPoliza from './components/Poliza/registroPoliza.js';
+import ActualizarPoliza from './components/Poliza/actualizarPoliza.js';
 
 
 
 import RegregistrarCorredor from './components/Corredor/registrarCorredor.js';
+import ActualizarCorredor from './components/Corredor/actualizarCorredor.js';
 
+
+import ActualizarCliente from './components/Cliente/actualizarCliente.js';
 
 import MenuCliente from './components/Cliente/menuCliente.js';
 
@@ -54,7 +58,7 @@ function App() {
             element={
               <Layout>
                 <Routes>
-                          
+                <Route path="/actualizarCliente/:id" element={<ActualizarCliente />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/seguro" element={<Seguro />} />
                     <Route path="/menuPoliza" element={<MenuPoliza />} />
@@ -64,11 +68,14 @@ function App() {
                     <Route path="/registroPoliza" element={<RegistroPoliza />} />
                     <Route path="/registroRamo" element={<RegistroRamo />} />
                     <Route path="/actualizarRamo/:id" element={<ActualizarRamo />} />
+                    
                     <Route path="/menuCorredor" element={<MenuCorredor />} />
+                    <Route path="/actualizarCorredor/:id" element={<ActualizarCorredor />} />
                     <Route path="/registrarCorredor" element={<RegregistrarCorredor />} />
                     <Route path="/menuCobertura/:nombre" element={<MenuCobertura />} />
                     <Route path="/agregarCobertura/:nombre" element={<AgregarCobertura />} />
                     <Route path="/actualizarCoberturas/:id" element={<ActualizarCoberturas />} />
+                    <Route path="/actualizarPoliza/:id" element={<ActualizarPoliza />} />
                     <Route path="/menuCliente" element={<MenuCliente />} />
                     <Route path="/registroCliente" element={<RegistroCliente />} />
                   <Route path="/" element={<Navigate to="/menuUsuario" />} />

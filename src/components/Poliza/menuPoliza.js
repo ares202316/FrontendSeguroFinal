@@ -68,7 +68,7 @@ const MenuCliente = () => {
                             </Link>
                             <button
                               className="btn btn-danger"
-                              onClick={() => eliminarPoliza(poliza.codigo)}
+                              onClick={() => eliminarPoliza(poliza.id)}
                             >
                               <i className="fa-solid fa-eraser"></i> Borrar
                             </button>

@@ -51,9 +51,9 @@ export async function ObtenerId(id) {
     }
 }
   
-  export async function Actualizar(registro) {
+  export async function Actualizar(corredor) {
     try {
-      const response = await axios.patch(`${API_URL}/${registro.id}`, registro);
+      const response = await axios.patch(`${API_URL}/${corredor.id}`, corredor);
       return response.data;
     } catch (error) {
       console.error("Error al actualizar el registro:", error);

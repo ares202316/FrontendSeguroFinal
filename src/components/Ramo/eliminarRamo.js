@@ -12,7 +12,7 @@ export const eliminarRamo = (id) => {
         })
         .catch((error) => {
           console.error("Error al eliminar el ramo:", error);
-          alert("Hubo un problema al eliminar el ramo.");
+          alert("El registro ya tiene una relacion con una poliza");
         });
     }
   };

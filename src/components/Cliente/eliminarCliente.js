@@ -12,7 +12,7 @@ export const eliminarCliente = (id) => {
         })
         .catch((error) => {
           console.error("Error al eliminar el cliente:", error);
-          alert("Hubo un problema al eliminar el cliente.");
+          alert("El registro ya tiene una relacion con una poliza");
         });
     }
   };

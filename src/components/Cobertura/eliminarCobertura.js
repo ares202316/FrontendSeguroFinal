@@ -12,7 +12,7 @@ export const eliminar = (id) => {
         })
         .catch((error) => {
           console.error("Error al eliminar el registro:", error);
-          alert("Hubo un problema al eliminar el registro.");
+          alert("El registro ya tiene una relacion con una poliza");
         });
     }
   };

@@ -69,7 +69,7 @@ const MenuRamo = () => {
                           <td>{corredor.email}</td>
                           <td>{corredor.codCorredor}</td>
                           <td>
-                            <Link to={`/actualizarCorrredores/${corredor.id}`} className="btn btn-warning">
+                            <Link to={`/actualizarCorredor/${corredor.id}`} className="btn btn-warning">
                                <i className="fa-regular fa-pen-to-square"></i> Editar
                             </Link>
                              <button

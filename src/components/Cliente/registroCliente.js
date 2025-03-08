@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { NavLink } from "react-router-dom";
 import { registrarCliente } from "../../actions/ClienteAction";
 
 function CreaCliente() {
@@ -61,7 +61,7 @@ function CreaCliente() {
          
           alert(error.response.data.ErrorMessages.join(", "));
         } else {
-          alert("Hubo un error en el registro.");
+          alert("No pudede dejar campos vacios ");
         }
       });
   };
@@ -233,10 +233,10 @@ function CreaCliente() {
         </form>
   
         <div className="mt-3 text-start">
-          <a href="/menuCliente" className="btn btn-link">
-            Volver
-          </a>
-        </div>
+              <NavLink to="/menuCliente" className="btn btn-link">
+                Volver
+              </NavLink>
+            </div>
       </div>
     </div>
   </div>
